@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Adiconar - Contatos</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/lib/bootstrap-4.3.1.min.css">
+</head>
+<body>
+	<main>
+		<h2>Adicionar Contato</h2>
+		
+		<div class="alert" id="resultado" style="display: none" role="alert"></div>
+		<form id="formulario" method="POST">
+			<label for="nome">Nome: </label> <input class="form-control mb-2" type="text" id="nome" name="nome"><br>
+			<label for="email">E-mail:</label> <input class="form-control mb-3" type="text" id="email" name="email"><br>
+
+			<input class="btn btn-sm btn-primary" type="submit" id="btnEnviar" value="Enviar">
+		</form>
+
+		<br>
+		<a href="index.html">« Voltar</a>
+	</main>
+
+	<script src="js/lib/jquery-3.4.1.min.js"></script>
+	<script src="js/lib/jquery.serializejson.js"></script>
+	<script src="js/adicionar.js" async></script>
+</body>
+</html>

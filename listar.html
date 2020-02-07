@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Listagem - Contatos</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/bootstrap-4.3.1.min.css">
+
+    <style>
+        #nome, #email {
+            width: -webkit-fill-available;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Listagem de Contatos</h2>
+        <span class="mb-2" style="display: block">Total de contatos: <span id="qtdTotalContatos"></span></span>
+        <div class="alert" id="resultado" style="display: none; width: 500px" role="alert"></div>
+        <a href="#" onclick="consultarApi()">Atualizar lista</a>
+        <table class="mt-1" border="1">
+            <thead>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th colspan="2">Ações</th>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog"
+            aria-labelledby="EditarContato" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="EditarContato">Editar Contato</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="formEditar">
+                        <div class="modal-body">
+                            <div class="alert alert-success" id="resultadoEditar" style="display: none;width: auto" role="alert"></div>
+                            <input type="hidden" id="id" name="id">
+                            <label for="nome">Nome: </label> <input class="form-control mb-2" type="text" id="nome" name="nome"><br>
+                            <label for="email">E-mail: </label> <input class="form-control" type="text" id="email" name="email">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <input type="submit" class="btn btn-primary" id="btnSalvar" value="Salvar alterações">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <a href="index.html">« Voltar</a>
+    </main>
+
+    <script src="js/lib/jquery-3.4.1.min.js"></script>
+    <script src="js/lib/jquery.serializejson.js"></script>
+    <script src="js/lib/bootstrap-4.3.1.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/listar.js" async></script>
+</body>
+</html>
